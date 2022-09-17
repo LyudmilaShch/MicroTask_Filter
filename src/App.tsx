@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import './App.css';
 import {NewComponent} from "./NewComponent";
 
-type FilterType = 'all' | 'ruble' | 'dollar'
+export type FilterType = 'all' | 'ruble' | 'dollar'
 
 function App() {
     const [money, setMoney] = useState([
@@ -43,12 +43,12 @@ function App() {
                     )
                 })}
             </ul>*/}
-            <NewComponent currentMoney={currentMoney}/>
-            <div style={{marginLeft: '35px'}}>
+            <NewComponent currentMoney={currentMoney} onClickFilterHandler={onClickFilterHandler}/>
+{/*            <div style={{marginLeft: '35px'}}>
                 <button onClick={() => onClickFilterHandler('all')}>All</button>
                 <button onClick={() => onClickFilterHandler('ruble')}>Rubles</button>
                 <button onClick={() => onClickFilterHandler('dollar')}>Dollars</button>
-            </div>
+            </div>*/}
         </>
     );
 }
